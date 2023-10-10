@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package="./pb";
+
+package GrpcAgent;
+
+service Notifier {
+  rpc Notify (NotifyRequest) returns (NotifyResponse);
+}
+
+message NotifyRequest {
+  string message = 1;
+}
+
+message NotifyResponse {
+  bool status = 1;
+}
